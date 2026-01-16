@@ -126,11 +126,15 @@ document.addEventListener('DOMContentLoaded', () => {
       There can only be one instance of ScrollSmoother at any given time. This was created in the inital page
       load within the 'init-gsap.js' file using 'ScrollSmoother.create()'. So code below uses this existing instance. */
 
-      let smoother = ScrollSmoother.get();
-      
-      /* Did have the scroll to top wrapped in an if statement below (dont's scroll to top if going back to a history entry)
-      but decided to simplify it by just always scrolling to top on new page load. */
-      smoother.scrollTo(0, false); // Use 'false' to jump straight to position as 'true' will animate the scroll.
+      if (ScrollSmoother.get()) {
+
+        let smoother = ScrollSmoother.get();
+        
+        /* Did have the scroll to top wrapped in an if statement below (dont's scroll to top if going back to a history entry)
+        but decided to simplify it by just always scrolling to top on new page load. */
+        smoother.scrollTo(0, false); // Use 'false' to jump straight to position as 'true' will animate the scroll.
+        
+      }
       
       if (url != window.location && isNewNonHistoryEntry) {
         // Add the new page to the 'window.history'. If the new page was triggered by a 'popstate' event (isNewNonHistoryEntry == false) don't add it.

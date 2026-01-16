@@ -49,23 +49,21 @@ function initGsap() {
 
           console.log("Touch screen detected, small width - deactivate parallax!");
 
-          ScrollSmoother.create({
-            wrapper: '#gsap-smooth-wrapper', // ID of wrapper element
-            content: '#gsap-smooth-content', // ID of content element
-            effects: false // Disable data-speed/data-lag so parallax NOT active on mobile/touch devices
-          });
+           ScrollTrigger.create({});
         
         } else {
 
           console.log("Non-touch screen detected, small width - activate parallax!");
-
-          ScrollSmoother.create({
-            wrapper: '#gsap-smooth-wrapper', // ID of wrapper element
-            content: '#gsap-smooth-content', // ID of content element
-            smooth: 1, // Adjust smooth scroll speed as needed
-            speed: 0.5,
-            effects: true // Enable data-speed/data-lag needed for parallax effects
-          });
+          
+          ScrollTrigger.create({});
+          
+          // ScrollSmoother.create({
+          //   wrapper: '#gsap-smooth-wrapper', // ID of wrapper element
+          //   content: '#gsap-smooth-content', // ID of content element
+          //   smooth: 1, // Adjust smooth scroll speed as needed
+          //   speed: 0.5,
+          //   effects: true // Enable data-speed/data-lag needed for parallax effects
+          // });
 
         }
 
@@ -140,12 +138,17 @@ function initGsap() {
   then the printed content can start part way down the page depending on where the user has scrolled to. */
   window.addEventListener("beforeprint", (event) => {
 
-    let smoother = ScrollSmoother.get();
-    smoother.scrollTo(0, false); // Use 'false' to jump straight to position as 'true' will animate the scroll.
+    if (ScrollSmoother.get()) {
 
-    setTimeout(() => {
-      return ScrollTrigger.refresh(true); // With the safe parameter true to allow for any rendering delays.
-    }, 250);
+      let smoother = ScrollSmoother.get();
+      smoother.scrollTo(0, false); // Use 'false' to jump straight to position as 'true' will animate the scroll.
+
+      setTimeout(() => {
+        return ScrollTrigger.refresh(true); // With the safe parameter true to allow for any rendering delays.
+      }, 250);
+
+    }
+
   });
 
 
