@@ -29,9 +29,9 @@ fs.readFile('./site/_data/theme.json', 'utf8', function(err, dataFile){
     the items in this file (_data/theme.json) via the CloudCannon admin interface. */
     var theme = dataFile.theme[0];
 
-    /*The variables-default.scss file holds all the default Bulma variable settings.
-    We read that file, then replace any variables that have been set in the theme data file,
-    and write the result to variables.scss */
+    /* The variables-default.scss file holds all the default Bulma variable settings.
+    This file is parsed, replacing any variables that have been set in the theme data file,
+    and the result is saved to variables.scss */
     fs.readFile('./site/css/variables-default.scss', 'utf-8', function (err, scssFile) {
     
         if(err){
@@ -42,10 +42,10 @@ fs.readFile('./site/_data/theme.json', 'utf8', function(err, dataFile){
         var replaced = scssFile;
 
         /* Only replace variable values if 'use_default_theme' is set to 'false'.
-        Otherwise keep all the default values so 'variables.scss' is identical to 'variables-default.scss'. */
+        Otherwise keep all the default values so 'variables.scss' will be identical to 'variables-default.scss'. */
         if (dataFile.use_default_theme === false) {
             
-            // FONTS ---
+            // FONTS
             
             if (theme.primary_font_family) {
                 const replacementString = theme.primary_font_family;
@@ -64,7 +64,7 @@ fs.readFile('./site/_data/theme.json', 'utf8', function(err, dataFile){
                 replaced = replaced.replace(/--bulma-body-line-height: .*/g, ('--bulma-body-line-height: ' + replacementString + ';'));
             }
             
-            // NAVBAR ---
+            // NAVBAR
             
             if (theme.navbar.background_color) {
                 const replacementString = theme.navbar.background_color;
@@ -87,7 +87,7 @@ fs.readFile('./site/_data/theme.json', 'utf8', function(err, dataFile){
                 replaced = replaced.replace(/\$navbar-dropdown-background-color: .*/g, ('$navbar-dropdown-background-color: ' + replacementString + ';'));
             }
             
-            // DEFAULT COLOURS (NON-COMPONENT COPY ---
+            // DEFAULT COLOURS (NON-COMPONENT COPY)
             
             if (theme.main_background_color) {
                 const replacementString = theme.main_background_color;
@@ -114,7 +114,7 @@ fs.readFile('./site/_data/theme.json', 'utf8', function(err, dataFile){
                 replaced = replaced.replace(/--bulma-link: .*/g, ('--bulma-link: ' + replacementString + ';'));
             }
             
-            // LIGHTEST THEME ---
+            // LIGHTEST THEME
             
             if (theme.components.lightest.background_color) {
                 const replacementString = theme.components.lightest.background_color;
@@ -153,7 +153,7 @@ fs.readFile('./site/_data/theme.json', 'utf8', function(err, dataFile){
                 replaced = replaced.replace(/\$lightest-theme-table-row-even-background-color: .*/g, ('$lightest-theme-table-row-even-background-color: ' + replacementString + ';'));
             }
             
-            // LIGHTER THEME ---
+            // LIGHTER THEME
             
             if (theme.components.lighter.background_color) {
                 const replacementString = theme.components.lighter.background_color;
@@ -192,7 +192,7 @@ fs.readFile('./site/_data/theme.json', 'utf8', function(err, dataFile){
                 replaced = replaced.replace(/\$lighter-theme-table-row-even-background-color: .*/g, ('$lighter-theme-table-row-even-background-color: ' + replacementString + ';'));
             }
             
-            // LIGHT THEME ---
+            // LIGHT THEME
             
             if (theme.components.light.background_color) {
                 const replacementString = theme.components.light.background_color;
@@ -231,7 +231,7 @@ fs.readFile('./site/_data/theme.json', 'utf8', function(err, dataFile){
                 replaced = replaced.replace(/\$light-theme-table-row-even-background-color: .*/g, ('$light-theme-table-row-even-background-color: ' + replacementString + ';'));
             }
             
-            // DARK THEME ---
+            // DARK THEME
             
             if (theme.components.dark.background_color) {
                 const replacementString = theme.components.dark.background_color;
@@ -270,7 +270,7 @@ fs.readFile('./site/_data/theme.json', 'utf8', function(err, dataFile){
                 replaced = replaced.replace(/\$dark-theme-table-row-even-background-color: .*/g, ('$dark-theme-table-row-even-background-color: ' + replacementString + ';'));
             }
             
-            // DARKER THEME ---
+            // DARKER THEME
             
             if (theme.components.darker.background_color) {
                 const replacementString = theme.components.darker.background_color;
@@ -309,7 +309,7 @@ fs.readFile('./site/_data/theme.json', 'utf8', function(err, dataFile){
                 replaced = replaced.replace(/\$darker-theme-table-row-even-background-color: .*/g, ('$darker-theme-table-row-even-background-color: ' + replacementString + ';'));
             }
             
-            // DARKEST THEME ---
+            // DARKEST THEME
             
             if (theme.components.darkest.background_color) {
                 const replacementString = theme.components.darkest.background_color;
@@ -348,7 +348,7 @@ fs.readFile('./site/_data/theme.json', 'utf8', function(err, dataFile){
                 replaced = replaced.replace(/\$darkest-theme-table-row-even-background-color: .*/g, ('$darkest-theme-table-row-even-background-color: ' + replacementString + ';'));
             }
             
-            // ALTERNATE 1 THEME ---
+            // ALTERNATE 1 THEME
             
             if (theme.components.alternate_1.background_color) {
                 const replacementString = theme.components.alternate_1.background_color;
@@ -387,7 +387,7 @@ fs.readFile('./site/_data/theme.json', 'utf8', function(err, dataFile){
                 replaced = replaced.replace(/\$alternate-1-theme-table-row-even-background-color: .*/g, ('$alternate-1-theme-table-row-even-background-color: ' + replacementString + ';'));
             }
             
-            // ALTERNATE 2 THEME ---
+            // ALTERNATE 2 THEME
             
             if (theme.components.alternate_2.background_color) {
                 const replacementString = theme.components.alternate_2.background_color;
@@ -426,7 +426,7 @@ fs.readFile('./site/_data/theme.json', 'utf8', function(err, dataFile){
                 replaced = replaced.replace(/\$alternate-2-theme-table-row-even-background-color: .*/g, ('$alternate-2-theme-table-row-even-background-color: ' + replacementString + ';'));
             }
             
-            // ALTERNATE 3 THEME ---
+            // ALTERNATE 3 THEME
             
             if (theme.components.alternate_3.background_color) {
                 const replacementString = theme.components.alternate_3.background_color;
@@ -465,7 +465,7 @@ fs.readFile('./site/_data/theme.json', 'utf8', function(err, dataFile){
                 replaced = replaced.replace(/\$alternate-3-theme-table-row-even-background-color: .*/g, ('$alternate-3-theme-table-row-even-background-color: ' + replacementString + ';'));
             }
             
-            // FOOTER ---
+            // FOOTER
             
             if (theme.footer.background_color) {
                 const replacementString = theme.footer.background_color;
@@ -492,7 +492,7 @@ fs.readFile('./site/_data/theme.json', 'utf8', function(err, dataFile){
                 replaced = replaced.replace(/\$footer-link-color: .*/g, ('$footer-link-color: ' + replacementString + ';'));
             }
             
-            // PAGE PRELOADER ---
+            // PAGE PRELOADER
 
             if (theme.page_preloader.page_preloader_color) {
                 const replacementString = theme.page_preloader.page_preloader_color;

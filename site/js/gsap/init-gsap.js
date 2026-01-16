@@ -2,22 +2,9 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 FILE: init-gsap.js
 
-DESCRIPTION: Iterate over all individual sections of class .use-gsap' and once images
+DESCRIPTION: Iterate over all individual sections of class '.use-gsap' and once images
 in those sections have loaded, intialise the GSAP functions for elements within that
 particular section.
-
-Sections containing images in the viewport are handled differently to those
-outside the viewport. This is to ensure that all images in the viewport are loaded
-before any GSAP animations are triggered, to avoid janky behaviour.
-
-For example, assume you just did the image laod check sequentially over all sections.
-If the first section on the page contains an image that is still loading, but the
-next section has all the images loaded already, GSAP initialisation and triggering
-for that second section would occur before the first section. So you might get the
-second section animating in before the first section, which looks bad.
-
-To avoid this, we first check which sections contain images in the viewport,
-and only once ALL those images are loaded do we bind GSAP to those sections.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 */
 
@@ -33,7 +20,8 @@ function initGsap() {
 
 
 
-  // Only enable scroll smoother (and parallax) when NOT in CloudcCannon editor as otherwise layout gets screwed up.
+  /*Only enable scroll smoother (and parallax) when NOT in CloudCannon editor as otherwise layout gets screwed up
+  when trying to edit content. */
   if (!window.inEditorMode) {
 
     if (ScrollSmoother.get()) {
@@ -47,8 +35,8 @@ function initGsap() {
         console.log("Wide screen detected so probably not mobile - activate parallax!");
         
         ScrollSmoother.create({
-          wrapper: '#gsap-smooth-wrapper', // Specify the ID of your wrapper element
-          content: '#gsap-smooth-content', // Specify the ID of your content element
+          wrapper: '#gsap-smooth-wrapper', // ID of wrapper element
+          content: '#gsap-smooth-content', // ID of content element
           smooth: 1, // Adjust smooth scroll speed as needed
           speed: 0.5,
           effects: true // Enable data-speed/data-lag needed for parallax effects
@@ -63,8 +51,8 @@ function initGsap() {
           console.log("Touch screen detected, small width - deactivate parallax!");
 
           ScrollSmoother.create({
-            wrapper: '#gsap-smooth-wrapper', // Specify the ID of your wrapper element
-            content: '#gsap-smooth-content', // Specify the ID of your content element
+            wrapper: '#gsap-smooth-wrapper', // ID of wrapper element
+            content: '#gsap-smooth-content', // ID of content element
             smooth: 1, // Adjust smooth scroll speed as needed
             speed: 0.5,
             effects: false // Disable data-speed/data-lag so parallax NOT active on mobile/touch devices
@@ -75,8 +63,8 @@ function initGsap() {
           console.log("Non-touch screen detected, small width - activate parallax!");
 
           ScrollSmoother.create({
-            wrapper: '#gsap-smooth-wrapper', // Specify the ID of your wrapper element
-            content: '#gsap-smooth-content', // Specify the ID of your content element
+            wrapper: '#gsap-smooth-wrapper', // ID of wrapper element
+            content: '#gsap-smooth-content', // ID of content element
             smooth: 1, // Adjust smooth scroll speed as needed
             speed: 0.5,
             effects: true // Enable data-speed/data-lag needed for parallax effects
@@ -92,20 +80,20 @@ function initGsap() {
     create using the standard ScrollTrigger in GSAP will automatically work with ScrollSmoother.
     You just need to ensure that the ScrollSmoother instance is created before your individual ScrollTrigger
     instances are set up. This way, ScrollSmoother can properly manage the scroll position and ensure that
-    all ScrollTrigger animations are synchronized with the smooth scrolling effect.*/
+    all ScrollTrigger animations are synchronized with the smooth scrolling effect. */
 
   }
 
-  /* The modern Screen Orientation API provides a reliable and standardized way to detect orientation changes
+  /* The Screen Orientation API provides a reliable and standardized way to detect orientation changes
   across many devices and browsers. Newer approach than relying on window resize events alone, which can be
   triggered by other actions like window resizing on desktops. */
   screen.orientation.addEventListener("change", () => {
 
     /* A scrollTrigger refresh here doesn't seem to be enough to fix issues with orientation change for example when
     going from portrait to landscape on mobile. If part-way down a page and change orientation, some of the GSAP animations
-    just after the last item animated in do not trigger as expected. So, do a full page reload. */
+    just after the last item animated in do not trigger as expected. So, do a full page reload.
 
-    /* A JavaScript window.location.reload() will reset all ScrollTrigger instances because reloading the page causes
+    A JavaScript window.location.reload() will reset all ScrollTrigger instances because reloading the page causes
     the entire JavaScript environment and the DOM to re-initialize. When a page is reloaded, all existing ScrollTriggers
     are essentially destroyed and recreated from scratch when the script runs again. The browser's default behavior,
     however, may attempt to restore the user's previous scroll position after the reload, which can sometimes lead to
@@ -169,17 +157,13 @@ function initGsap() {
   // Select all the parent container elements that are of the class '.use-gsap'. These wil be mostly component 'section' elements.
   document.querySelectorAll('.use-gsap .gsap-element-wrapper').forEach(section => {
 
-
-    /* Iterate over the sections ('.gsap' class)and find if any of the images contained in there are in the viewport.
-    If they are add to 'sectionsWithImagesInViewportArray' and if not add to 'sectionsWithImagesNotInViewportArray'.
-    Only look at the first image found in the loop. */
     
     let loadedImageCount = 0;
     const totalImages = section.querySelectorAll('img').length;
 
     if (totalImages === 0) {
 
-      // No image sin this div so just call gsap functions straight away.
+      // No images in this div so just call GSAP functions straight away.
       gsapFunctions(section);
 
     } else {
@@ -193,7 +177,6 @@ function initGsap() {
         
           image.addEventListener('load', () => {
 
-              // console.log(`Image loaded: ${image.src}`);
               loadedImageCount++;
               if (loadedImageCount === totalImages) {
                   

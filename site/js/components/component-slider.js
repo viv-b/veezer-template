@@ -81,7 +81,7 @@ function initSlider() {
       console.log(yDist);
 
       // Check for swipe left...
-      // To turn the threshold value into a negative: Math.abs(number goes here)*-1. That’ll get the absolute (positive) value and then reverse
+      // To turn the threshold value into a negative: Math.abs(number goes here)*-1. That’ll get the absolute (positive) value and then reverse.
       if (xDist < (threshold * -1)) {
         // Simulate 'previous' button click
         slider.querySelector('.slider-next').click();
@@ -115,13 +115,11 @@ function initSlider() {
       
     })
 
-    // --- END HANDLE SWIPE/TOUCH ---
+   
     
     
     let totalSliderSlides = slider.dataset.totalSlides;
-    
     let autoInterval = slider.dataset.autoInterval;
-    
     let interval;
     
     /* Unless the data value for auto-interval is > 0 then set as a delay.
@@ -146,9 +144,9 @@ function initSlider() {
 
       // Set up the observer
       const observer = new IntersectionObserver(handleIntersection, {
-        root: null, // defaults to the browser viewport
-        rootMargin: '0px', // an offset around the boundaries of the root element (the viewport by default)
-        threshold: 0.2 // fires the callback when 20% of the target is visible
+        root: null, // Defaults to the browser viewport
+        rootMargin: '0px', // An offset around the boundaries of the root element (the viewport by default)
+        threshold: 0.2 // Fires the callback when 20% of the target is visible
       });
 
       // Start observing the slider element

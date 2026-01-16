@@ -1,6 +1,6 @@
 function initFleet() {
   
-  /*NOTE: This script is set up so that it only works with a single one of these components in the site.
+  /* NOTE: This script is set up so that it only works with a single one of these components in the site.
   Could make it iterative like Tabs component, but probably no real need to. */
   
   // Ignore this whole script if...
@@ -15,7 +15,7 @@ function initFleet() {
     
     filterButtonGroup.addEventListener("click", function(event) {
       
-      // only work with buttons
+      // Only work with buttons
       if (event.target.tagName !== "BUTTON") {
         return;
       }
@@ -30,8 +30,6 @@ function initFleet() {
       
       sessionStorage.setItem("fleet-filter-selected",filterValue);
       
-      // console.log("SESSION STORAGE - fleet-filter-selected: " + sessionStorage.getItem("fleet-filter-selected"));
-    
     });
     
     
@@ -100,15 +98,15 @@ function initFleet() {
     };
     
     
-    // Below fires on initial load of page, either freshly loaded or Ajax loaded.
+    // Below fires on initial load of page, either freshly loaded or Fetch API loaded.
     
     // Check what button was selected if had previous visit (if there was). Otherwise set the selected button to 'all'.
     if (lastFilterValue) {
       
       let lastSelectedButton = document.querySelector(".filter-button-group .button[data-filter='" + lastFilterValue + "']");
       
-      // Note that if there was an update to the site via the admin AND still using same session values then a stored value
-      // may not actually exist as a current button. If that's the case just ignore and set to default.
+      /*Note that if there was an update to the site via the admin AND still using same session values then a stored value
+      may not actually exist as a current button. If that's the case just ignore and set to default. */
       if (lastSelectedButton) {
         
         lastSelectedButton.click();

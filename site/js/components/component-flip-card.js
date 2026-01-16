@@ -10,7 +10,7 @@ function initFlipCard() {
           
         card.addEventListener('click', event => {
             
-            // Reset all z-indexes for all cards
+            // Reset all z-indexes for all cards.
             item.querySelectorAll('.flip-card').forEach(element => {
               element.style.zIndex = "0";
             });

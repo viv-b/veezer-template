@@ -1,3 +1,13 @@
+/*
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FILE: init-modals.js
+
+DESCRIPTION: Used to initialize the modal functionality.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*/
+
+
+
 function initModals() {
 
 
@@ -20,7 +30,7 @@ function initModals() {
     };
 
 
-    // Clone and move modals to the modal-holder div to avoid issues with fixed positioning inside GSAP Smooth Scroller
+    // Clone and move modals to the modal-holder div to avoid issues with fixed positioning inside GSAP Smooth Scroller.
     document.querySelectorAll('.modal-component').forEach(modalItem => {
         
         const clonedModal = modalItem.querySelector(".modal.to-be-cloned").cloneNode(true);
@@ -34,14 +44,13 @@ function initModals() {
     });
     
 
-    // Add event listeners to open the modal
+    // Add event listeners to open the modal.
     document.querySelectorAll('.js-modal-trigger').forEach(trigger => {
         
         const target = document.getElementById(trigger.dataset.target);
     
         trigger.addEventListener('click', () => {
           
-          // alert(target);
           openModal(target);
           
         });
@@ -49,7 +58,7 @@ function initModals() {
     });
     
     
-    // Add event listeners to close the modal whenever user clicks outside modal
+    // Add event listeners to close the modal whenever user clicks outside modal.
     document.querySelectorAll(".modal-background, .modal-close,.modal-card-head .delete, .modal-card-foot .button").forEach((elem) => {
       
       const modal = elem.closest(".modal");
@@ -63,12 +72,10 @@ function initModals() {
     });
    
    
-    // Adding keyboard event listeners to close the modal
+    // Adding keyboard event listeners to close the modal.
     document.addEventListener("keydown", (event) => {
               
       if (event.key === 'Escape') {
-   
-        // Using escape key 
         closeModal();
       }
       

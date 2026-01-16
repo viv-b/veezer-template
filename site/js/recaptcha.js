@@ -1,3 +1,12 @@
+/*
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FILE: recaptcha.js
+
+DESCRIPTION: Used to initialize and handle Google reCAPTCHA v3 on contact forms.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*/
+
+
 function initRecaptcha() {
 	  
 
@@ -11,7 +20,7 @@ function initRecaptcha() {
 
 
 
-  /* This code has been modified so that it locates all forms with a CLASS of .site-contact-form.
+  /* This code has been modified so that it locates all forms with a class of '.site-contact-form'.
   It was set up to work with ID's but doing it this way means that there can be multiple forms on the one page. */
   let submitted = false;
   let tokenCreated = false;
@@ -53,21 +62,19 @@ function initRecaptcha() {
               // Prevent more than one submission
               if (!submitted) {
                 submitted = true;
-                // needs for recaptacha ready
+                // Check recaptcha ready
                 grecaptcha.ready(function() {
-                  // do request for recaptcha token
-                  // response is promise with passed token
-                  
-                  // NOTE the variable recaptchaKey is set in the 'default' layout template.
+                  /* Request recaptcha token. Response is promise with passed token.
+                  NOTE: the variable 'recaptchaKey' is set in the 'default' layout template. */
                   grecaptcha.execute(recaptchaKey, {action: 'create_comment'}).then(function (token) {
-                    // add token to form
+                    // Add token to form
                     var input = document.createElement("input");
                     input.type = "hidden";
                     input.name = "g-recaptcha-response";
                     input.value = token;
                     formEl.appendChild(input);
         
-                    // resubmit the form
+                    // Resubmit the form
                     tokenCreated = true;
                     formEl.submit();
                   });

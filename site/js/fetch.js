@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelector('link[rel="canonical"]').setAttribute("href", doc.querySelector('link[rel="canonical"]').getAttribute("href"));
 
-    // TODO - Could possibly update other meta tags here too. Not needed for SEO as such tags based on full page refreshes.
+    // TODO - Could possibly update other meta tags here too. Not needed for SEO as crawlers should only index content based on full page refreshes.
 
   };
 
@@ -110,21 +110,21 @@ document.addEventListener('DOMContentLoaded', () => {
       var domContainer = document.querySelector("main");
       domContainer.innerHTML = newContent;
 
-      // Clear any moadl items that were in the modal-holder div (as these are page specific).
+      // Clear any modal items that were in the modal-holder div (as these are page specific).
       document.getElementById("modal-holder").innerHTML = "";
 
       updateMenu(url);
 
       updateMetaTags(doc);
 
-      /* Only do the scroll to top of page if not a popstate (history) call. Otherwise want to keep the scroll position
+      /* Only scroll to top of page if not a popstate (history) call. Otherwise want to keep the scroll position
       where it was left in the new (revisited) page.
       
       Note that using the Window.scrollTo() method here does not always work correctly with ScrollSmoother enabled,
-      so use the method provided by ScrollSmoother instead. */
+      so use the method provided by ScrollSmoother instead.
 
-      /* There can only be one instance of ScrollSmoother at any given time. This was created in the inital page
-      load within the 'init-gsap.js' file via 'ScrollSmoother.create()'. So here just get the existing instance. */
+      There can only be one instance of ScrollSmoother at any given time. This was created in the inital page
+      load within the 'init-gsap.js' file using 'ScrollSmoother.create()'. So code below uses this existing instance. */
 
       let smoother = ScrollSmoother.get();
       
@@ -140,8 +140,8 @@ document.addEventListener('DOMContentLoaded', () => {
       
       }
 
-      /* Allow small amout of delay for scroll position to get back to the top of the screen.
-      This avoids the issue of scroll positions being out of whack if for example you go from part
+      /* Allow small delay for scroll position to get back to the top of the screen.
+      This avoids the issue of scroll positions being incorrect if for example you go from part
       way down one page and then go to a new page, some of the items will be pre-animated in
       without needing scroll trigger. */
       setTimeout(() => {
@@ -161,13 +161,12 @@ document.addEventListener('DOMContentLoaded', () => {
         link.blur();
       });
 
-      /* In case there was a connection issue and the notice was displayed, then an ajax link
+      /* In case there was a connection issue and the notice was displayed, and an internal link (using the Fetch API)
       was clicked, need to hide the notice. If already hidden when no connection issue no problem. */
       document.getElementById("connection-issue-notice").style.display = "none";
 
     }).catch(function(err) {
 
-      // There was an error.
       console.warn("Something went wrong.", err);
 
       document.getElementById("connection-issue-notice").style.display = "block";
@@ -178,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  /* Capture the click event for the navigation div (nav) and also any internal links in the main content div (main).
+  /* Capture the click event for the navigation div (<nav>) and also any internal links in the main content div (<main>).
   Turn off the default link behaviour and do a Fetch API call to get the new content rather than doing a full page reload.
   Also capture clicks on logo holder and footer sections. The click event listener uses 'event delegation' on a permanent
   parent item which is applied to any new fetched content within it.
@@ -198,9 +197,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       let clickedElement;
 
-      /* Check if the clicked element is an image wrapped in a link. If so then need to get the attributes of the PARENT link element
-      to process things. Only want to consider links or images wrapped in links to process. OR if in the main navbar,
-      the link is actually a span inside the a tag. */
+      /* Check if the clicked element is an image wrapped in a link. If so then need to get the attributes of the PARENT
+      link element to process things. Only want to consider links or images wrapped in links to process OR if in the main
+      navigation bar, the link is actually a span inside the a tag. */
       if (event.target.tagName === "IMG" || event.target.tagName === "SPAN") {
 
         if (event.target.parentElement.tagName === "A") {
@@ -215,6 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       }
 
+      // TODO: Could refactor the nested if statements below for clarity, but reasonably straightforward as is.
       if (clickedElement) {
 
         // New tab...
@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
               // Telephone link...
               if (clickedElement.getAttribute("href").toLowerCase().indexOf("tel:") === -1) {
 
-                // Gallery image link (as don't want to make sure doesn't fully reload page when clicked on image link)...
+                // Gallery image link (as don't want to fully reload page when clicked on image link)...
                 let galleryLink = false;
 
                 // Make sure there is a class attribute otherwise checking 'indexOf' on a null object will cause an error.
@@ -275,7 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* The popstate event of the Window interface is fired when the active history entry changes while the user navigates the session history.
-  It changes the current history entry to that of the last page the user visited or, if 'history.pushState()' has been used to add a history
+  It changes the current history entry to that of the last page the user visited OR, if 'history.pushState()' has been used to add a history
   entry to the history stack, that history entry is used instead. */
   window.addEventListener("popstate", (event) => {
 
@@ -338,5 +338,7 @@ document.addEventListener('DOMContentLoaded', () => {
   gsap.registerPlugin(ScrollTrigger,ScrollSmoother);
 
   initModules();
+
+  
 
 });

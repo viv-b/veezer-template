@@ -1,7 +1,18 @@
+/*
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FILE: init-masonry.js
+
+DESCRIPTION: Used in the Blog section (Blog summary page or a Tag page) to handle the
+toggling between card and flat display layouts.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*/
+
+
+
 function initMasonry() {
   
   
-  // Ignore this whole script if this page is not either the main Blog page or a Tag page.
+  // Ignore this whole script if this page is not the Blog summary page or a Tag page.
   if (document.getElementById("show-cards")) {
 
     
@@ -77,7 +88,7 @@ function initMasonry() {
       const screenWidth = window.innerWidth;
       let numColumns;
     
-      switch (true) { // Evaluates each case as a boolean condition
+      switch (true) { // Evaluates each case as a boolean condition.
         case (screenWidth < 600):
           numColumns = 1;
           break;
@@ -143,13 +154,13 @@ function initMasonry() {
       }
       
     } else {
-  	  /* No localStorage available. No sweat, no need to do anything,. SYstem just wont remember the setting
+  	  /* No localStorage available. No sweat, no need to do anything. System just wont remember the setting
       so will default to 'flat' display of posts. */
     }
 
 
 
-    // Add a resize listener for responsiveness
+    // Add a resize listener for responsiveness.
     window.addEventListener('resize', () => {
         applyMasonryLayout(masonryContainer, masonryItems,  getNumColumnsToDisplay(), columnPadding);
     });

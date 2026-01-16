@@ -1,7 +1,18 @@
+/*
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FILE: init-events.js
+
+DESCRIPTION: Used in the Events summary page to handle the toggling between
+upcoming and previous events.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*/
+
+
+
 function initEvents() {
   
   
-  // Ignore this whole script if this page is not either the main Blog page or a Tag page
+  // Ignore this whole script if this page is not the main Events summary page.
   if (document.getElementById("events-summary-upcoming")) {
 
 

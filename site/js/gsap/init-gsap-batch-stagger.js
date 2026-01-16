@@ -37,8 +37,6 @@ function initGsapBatchStagger() {
       
       // Where entries are an array of IntersectionObserverEntry corresponding to the items we tell the observer to observe.
       images => {
-      
-        // console.log(images);
         
         images.forEach(image => {
           

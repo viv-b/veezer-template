@@ -1,3 +1,13 @@
+/*
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FILE: init-modules.js
+
+DESCRIPTION: Used to initialize all the modules used throughout the site. This happens
+on each partial page refresh.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*/
+
+
 
 import {
   initGsap

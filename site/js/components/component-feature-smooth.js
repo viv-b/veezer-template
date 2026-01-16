@@ -1,7 +1,7 @@
-/* NOTE: When viewed in the non-productin environment, because the images are animated in from a smzller size (scaled up
+/* NOTE: When viewed in the non-production environment, because the images are animated in from a smaller size (scaled up
 using GSAP), the layout will shift as the images load in. In production, the images have width and height attributes set
 so there is no layout shift. If want to see this effect, put the ScrollTrigger markers on and compare the production
-branch with the development one. You will see the markes evenly positioned as you go down the page on production.
+branch with the development one. You will see the markers evenly positioned as you go down the page on production.
 Not so much with the development one as you progress down the page. */
 
 function initGsapFeatureSmooth() {
@@ -32,7 +32,7 @@ function initGsapFeatureSmooth() {
         const previousColor = sectionsToColorArr[i - 1]
           ? sectionsToColorArr[i - 1].dataset.bgColor
           : color;
-        // console.log(previousColor);
+       
         ScrollTrigger.create({
           trigger: section,
           start: "top center",

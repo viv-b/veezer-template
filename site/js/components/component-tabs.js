@@ -20,7 +20,7 @@ function initTabs() {
   
         tabButtonGroup.addEventListener("click", function(event) {
           
-          // only work with buttons
+          // Only work with buttons
           if (event.target.tagName !== "BUTTON") {
             return;
           }

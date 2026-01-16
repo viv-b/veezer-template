@@ -1,7 +1,8 @@
 /*
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 FILE: script.js
-DESCRIPTION: Handles all the JS for the site that is outside of the 'main' div that is replaced when
+
+DESCRIPTION: Handles all the JS for the site that is outside of the <main> div that is replaced when
 using Fetch API to load new content. This includes the navbar, page loader, and handling fonts loading.
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 */

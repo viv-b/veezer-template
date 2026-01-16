@@ -1,4 +1,4 @@
-Tidied code with https://beautifier.io/
+Can tidy code with https://beautifier.io/
 Used spacing indent option (2 spaces), rest is just defaults.
 
 vertical space between code blocks/functions: 3 lines.
@@ -23,5 +23,3 @@ Block/Section of code below less related than above it: Example:
 INITIAL PAGE LOAD
 +++++++++++++++++
 */
-
-

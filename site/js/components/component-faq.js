@@ -27,7 +27,6 @@ function initFaq() {
     function toggleFaq(panelToActivate) {
       
         const activeButton = panelToActivate.querySelector(".faq-trigger");
-        // const activePanel = panelToActivate.querySelector(".faq-content");
         const activePanelIsOpened = activeButton.getAttribute("aria-expanded");
     
         if (activePanelIsOpened === "true") {
