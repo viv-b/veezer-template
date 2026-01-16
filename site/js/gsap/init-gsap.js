@@ -52,8 +52,6 @@ function initGsap() {
           ScrollSmoother.create({
             wrapper: '#gsap-smooth-wrapper', // ID of wrapper element
             content: '#gsap-smooth-content', // ID of content element
-            smooth: 1, // Adjust smooth scroll speed as needed
-            speed: 0.5,
             effects: false // Disable data-speed/data-lag so parallax NOT active on mobile/touch devices
           });
         
