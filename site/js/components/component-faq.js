@@ -23,7 +23,7 @@ function initFaq() {
 
           activePanel.querySelector(".faq-content").addEventListener("transitionend", () => {
             alert("ended");
-            ScrollTrigger.refresh();
+            ScrollTrigger.refresh(true); // With the safe parameter true to allow for any rendering delays.
           });
           
         });
