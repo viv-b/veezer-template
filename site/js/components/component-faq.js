@@ -32,7 +32,9 @@ function initFaq() {
           ease: "power1.inOut",
           reversed: false,
           onComplete: () => {
-            ScrollTrigger.refresh(true); // With the safe parameter true to allow for any rendering delays.
+            setTimeout(() => {
+              ScrollTrigger.refresh(true); // With the safe parameter true to allow for any rendering delays.
+            }, 500);
           }
         });
 
@@ -48,7 +50,9 @@ function initFaq() {
           ease: "power1.inOut",
           reversed: false,
           onComplete: () => {
-            ScrollTrigger.refresh(true); // With the safe parameter true to allow for any rendering delays.
+            setTimeout(() => {
+              ScrollTrigger.refresh(true); // With the safe parameter true to allow for any rendering delays.
+            }, 500);
           }
         });
 
