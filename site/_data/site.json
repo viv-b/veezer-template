@@ -1,6 +1,6 @@
 {
   "use_fetch": true,
-  "base_url": "https://brisk-bunny.cloudvent.net",
+  "base_url": "https://awake-teacher.cloudvent.net",
   "site_title": "Veezer Static Site Template",
   "site_description": "A work-in-progress static website template from Viv Barakat, Lumina Web Solutions Ltd. Built with Eleventy to run in the CloudCannon environment.",
   "site_logo": "/uploads/theme/veezer-logo.png",
