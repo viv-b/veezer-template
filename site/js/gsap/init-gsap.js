@@ -20,7 +20,7 @@ function initGsap() {
 
 
 
-  /*Only enable scroll smoother (and parallax) when NOT in CloudCannon editor as otherwise layout gets screwed up
+  /* Only enable scroll smoother (and parallax) when NOT in CloudCannon editor as otherwise layout gets screwed up
   when trying to edit content. */
   if (!window.inEditorMode) {
 

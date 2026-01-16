@@ -45,7 +45,7 @@
                         <div class="content gsap-element-wrapper image-wrapper" data-gsap-animation-name="scale-up" data-gsap-delay="0.25" data-gsap-duration="0.4">
 
                             {%- if item.feature_image %}{% assign current_image = item.feature_image %}{% else %}{% assign current_image = site.placeholder_image %}{% endif %}
-                            {% bookshop_include "resize-image-srcset" rs_lazy: true rs_image: current_image rs_quality: "70" rs_title: title rs_multi_column_max_image_width: "50vw" rs_aspect_ratio: crop %}
+                            {% bookshop_include "resize-image-srcset" rs_lazy: true rs_image: current_image rs_quality: "65" rs_title: title rs_multi_column_max_image_width: "50vw" rs_aspect_ratio: crop %}
                                
                         </div>
                     

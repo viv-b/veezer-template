@@ -46,12 +46,12 @@
             {% if img.use_parallax %}
                 <div class="content gsap-element-wrapper feature-image-wrapper" data-gsap-animation-name="simple-fade-in" style="aspect-ratio: {{ img.crop }};">
                     <div class="gsap-parallax-element" data-speed="0.8">
-                        {% bookshop_include "resize-image-srcset" rs_lazy: lazy_load_flag rs_image: current_image rs_quality: "50" rs_title: title rs_multi_column_max_image_width: "50vw" rs_aspect_ratio: img.crop %}
+                        {% bookshop_include "resize-image-srcset" rs_lazy: lazy_load_flag rs_image: current_image rs_quality: "55" rs_title: title rs_multi_column_max_image_width: "50vw" rs_aspect_ratio: img.crop %}
                     </div>
                 </div>
             {% else %}
                 <div class="content gsap-element-wrapper feature-image-wrapper" data-gsap-animation-name="{% if reversed %}slide-in-from-left{% else %}slide-in-from-right{% endif %}" data-gsap-delay="0.5" style="aspect-ratio: {{ img.crop }};">
-                    {% bookshop_include "resize-image-srcset" rs_lazy: lazy_load_flag rs_image: current_image rs_quality: "50" rs_title: this_title rs_multi_column_max_image_width: "50vw" rs_aspect_ratio: img.crop %}
+                    {% bookshop_include "resize-image-srcset" rs_lazy: lazy_load_flag rs_image: current_image rs_quality: "55" rs_title: this_title rs_multi_column_max_image_width: "50vw" rs_aspect_ratio: img.crop %}
                 </div>
             {%- endif %}
                 
