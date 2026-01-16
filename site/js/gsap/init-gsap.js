@@ -49,21 +49,21 @@ function initGsap() {
 
           console.log("Touch screen detected, small width - deactivate parallax!");
 
-           ScrollTrigger.create({});
+          /* Avoid adding ScrollSmoother on touch devices with small screens to improve performance and usability.
+          Create a global ScrollTrigger instance to ensure ScrollTrigger is still active for other animations. */
+          ScrollTrigger.create({});
         
         } else {
 
           console.log("Non-touch screen detected, small width - activate parallax!");
-          
-          ScrollTrigger.create({});
-          
-          // ScrollSmoother.create({
-          //   wrapper: '#gsap-smooth-wrapper', // ID of wrapper element
-          //   content: '#gsap-smooth-content', // ID of content element
-          //   smooth: 1, // Adjust smooth scroll speed as needed
-          //   speed: 0.5,
-          //   effects: true // Enable data-speed/data-lag needed for parallax effects
-          // });
+
+          ScrollSmoother.create({
+            wrapper: '#gsap-smooth-wrapper', // ID of wrapper element
+            content: '#gsap-smooth-content', // ID of content element
+            smooth: 1, // Adjust smooth scroll speed as needed
+            speed: 0.5,
+            effects: true // Enable data-speed/data-lag needed for parallax effects
+          });
 
         }
 
@@ -148,7 +148,7 @@ function initGsap() {
       }, 250);
 
     }
-
+    
   });
 
 

@@ -133,7 +133,10 @@ document.addEventListener('DOMContentLoaded', () => {
         /* Did have the scroll to top wrapped in an if statement below (dont's scroll to top if going back to a history entry)
         but decided to simplify it by just always scrolling to top on new page load. */
         smoother.scrollTo(0, false); // Use 'false' to jump straight to position as 'true' will animate the scroll.
-        
+
+      } else {
+        // Fallback with mobile where ScrollSmoother not initialised at all, just using ScrollTrigger.
+        window.scrollTo(0, 0);
       }
       
       if (url != window.location && isNewNonHistoryEntry) {
