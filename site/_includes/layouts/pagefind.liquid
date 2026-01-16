@@ -13,7 +13,7 @@
         {%- if processEnv.environment == "production" %}
 
           <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
-          {%- comment %} CSS file below to override the PageFind defaults. {%- endcomment %}
+          {%- comment %} CSS file below to override the PageFind defaults. {% endcomment %}
           <link href="/css/my-pagefind.css" rel="stylesheet">
           <script src="/pagefind/pagefind-ui.js"></script>
           
@@ -24,7 +24,7 @@
               new PagefindUI({ element: "#search", showSubResults: true });
             });
           </script>
-          {%- comment %} The /pagefind/pagefind-ui.css and /pagefind/pagefind-ui.js assets will be created by Pagefind when the site is indexed. {%- endcomment %}
+          {%- comment %} The /pagefind/pagefind-ui.css and /pagefind/pagefind-ui.js assets will be created by Pagefind when the site is indexed. {% endcomment %}
         
         {%- else %}
 
