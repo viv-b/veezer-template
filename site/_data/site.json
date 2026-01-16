@@ -10,7 +10,7 @@
   "image_optimisation": "ImageKit",
   "imagekit_url": "https://ik.imagekit.io/cloudcannon",
   "placeholder_image": "/uploads/defaults/placeholder.jpg",
-  "recaptcha_key": null,
+  "recaptcha_key": "6LcSUEwsAAAAAJZIjsQKmfZXt8x4UFkLEKCuMIRB",
   "_inputs": {
     "image_optimisation": {
       "type": "select",
