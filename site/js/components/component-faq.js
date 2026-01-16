@@ -21,10 +21,24 @@ function initFaq() {
           //   alert("yep");
           // }, 1500);
 
-          activePanel.querySelector(".faq-content").addEventListener("transitionend", () => {
-            alert("ended");
-            ScrollTrigger.refresh(true); // With the safe parameter true to allow for any rendering delays.
+          const toggleAnimation = gsap.fromTo(activePanel.querySelector(".faq-content"), {
+            height: 0
+          }, {
+            duration: 0.5,
+            height: "auto", // Animate to the height required by the content
+            opacity: 1,
+            ease: "power1.inOut",
+            reversed: true // Start the animation reversed (closed)
           });
+
+          setTimeout(() => {
+             ScrollTrigger.refresh(true); // With the safe parameter true to allow for any rendering delays.
+          }, 600);
+
+          //activePanel.querySelector(".faq-content").addEventListener("transitionend", () => {
+            //alert("ended");
+            //ScrollTrigger.refresh(true); // With the safe parameter true to allow for any rendering delays.
+          //});
           
         });
     

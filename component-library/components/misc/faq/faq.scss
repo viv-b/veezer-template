@@ -60,13 +60,13 @@
   
   &-content {
     display: grid;
-    grid-template-rows: 0fr; /* Initial collapsed state */
+    //grid-template-rows: 0fr; /* Initial collapsed state */
     transition: grid-template-rows 500ms;
     cursor: default;
   }
   
   &-content[aria-hidden="false"] {
-    grid-template-rows: 1fr; /* Expanded state */
+    //grid-template-rows: 1fr; /* Expanded state */
   }
   
   &-content > div {
