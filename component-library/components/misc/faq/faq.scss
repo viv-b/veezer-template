@@ -60,17 +60,13 @@
   
   &-content {
     display: grid;
-    height: 10px;
-    border: solid 1px orange;
-    // grid-template-rows: 0fr; /* Initial collapsed state */
+    grid-template-rows: 0fr; /* Initial collapsed state */
     transition: grid-template-rows 500ms;
     cursor: default;
   }
   
   &-content[aria-hidden="false"] {
-    height: 500px;
-    border: solid 1px green;
-    // grid-template-rows: 1fr; /* Expanded state */
+    grid-template-rows: 1fr; /* Expanded state */
   }
   
   &-content > div {

@@ -16,10 +16,15 @@ function initFaq() {
 
           /* Refresh ScrollTrigger to ensure any height changes are accounted for in scroll positions,
           particularly for sections below the FAQ section. */
-          setTimeout(() => {
-            ScrollTrigger.refresh(true); // With the safe parameter true to allow for any rendering delays.
-            alert("yep");
-          }, 1500);
+          // setTimeout(() => {
+          //   ScrollTrigger.refresh(true); // With the safe parameter true to allow for any rendering delays.
+          //   alert("yep");
+          // }, 1500);
+
+          activePanel.querySelector(".faq-content").addEventListener("transitionend", () => {
+            alert("ended");
+            ScrollTrigger.refresh();
+          });
           
         });
     
