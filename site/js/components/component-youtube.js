@@ -75,7 +75,7 @@ function initYouTube() {
           tag.src = "https://www.youtube.com/iframe_api";
           let firstScriptTag = document.getElementsByTagName("script")[0];
           firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-          // Viv added
+          
           tag.id = "yt-iframe-script";
           
       }
