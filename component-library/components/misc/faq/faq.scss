@@ -59,14 +59,9 @@
   }
   
   &-content {
-    display: grid;
-    //grid-template-rows: 0fr; /* Initial collapsed state */
-    transition: grid-template-rows 500ms;
+    height: 0;
     cursor: default;
-  }
-  
-  &-content[aria-hidden="false"] {
-    //grid-template-rows: 1fr; /* Expanded state */
+    overflow: hidden;
   }
   
   &-content > div {

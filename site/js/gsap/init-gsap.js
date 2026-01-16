@@ -40,7 +40,6 @@ function initGsap() {
           smooth: 1, // Adjust smooth scroll speed as needed
           speed: 0.5,
           effects: true // Enable data-speed/data-lag needed for parallax effects
-          
         });
       },
 

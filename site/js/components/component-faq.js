@@ -14,36 +14,49 @@ function initFaq() {
           if (!activePanel) return;
           toggleFaq(activePanel);
 
-          /* Refresh ScrollTrigger to ensure any height changes are accounted for in scroll positions,
-          particularly for sections below the FAQ section. */
-          // setTimeout(() => {
-          //   ScrollTrigger.refresh(true); // With the safe parameter true to allow for any rendering delays.
-          //   alert("yep");
-          // }, 1500);
-
-          const toggleAnimation = gsap.fromTo(activePanel.querySelector(".faq-content"), {
-            height: 0
-          }, {
-            duration: 0.5,
-            height: "auto", // Animate to the height required by the content
-            opacity: 1,
-            ease: "power1.inOut",
-            reversed: true // Start the animation reversed (closed)
-          });
-
-          setTimeout(() => {
-             ScrollTrigger.refresh(true); // With the safe parameter true to allow for any rendering delays.
-          }, 600);
-
-          //activePanel.querySelector(".faq-content").addEventListener("transitionend", () => {
-            //alert("ended");
-            //ScrollTrigger.refresh(true); // With the safe parameter true to allow for any rendering delays.
-          //});
-          
         });
     
     });
+
+
+    function toggleAnimation(panelToActivate,reversed) {
+      
+      if (reversed === false) {
+        
+        // Opening the panel
+        gsap.fromTo(panelToActivate.querySelector(".faq-content"), {
+          height: 0
+        }, {
+          duration: 0.5,
+          height: "auto",
+          ease: "power1.inOut",
+          reversed: false,
+          onComplete: () => {
+            ScrollTrigger.refresh(true); // With the safe parameter true to allow for any rendering delays.
+          }
+        });
+
+      } else {
+        // Closing the panel
+        const currentHeight = gsap.getProperty(panelToActivate.querySelector(".faq-content"), 'height');
+        
+        gsap.fromTo(panelToActivate.querySelector(".faq-content"), {
+          height: currentHeight
+        }, {
+          duration: 0.5,
+          height: 0,
+          ease: "power1.inOut",
+          reversed: false,
+          onComplete: () => {
+            ScrollTrigger.refresh(true); // With the safe parameter true to allow for any rendering delays.
+          }
+        });
+
+      }
+
+    };
     
+
     function toggleFaq(panelToActivate) {
       
         const activeButton = panelToActivate.querySelector(".faq-trigger");
@@ -58,6 +71,8 @@ function initFaq() {
           panelToActivate
             .querySelector(".faq-content")
             .setAttribute("aria-hidden", true);
+
+          toggleAnimation(panelToActivate, true);
             
         } else {
           
@@ -66,6 +81,8 @@ function initFaq() {
           panelToActivate
             .querySelector(".faq-content")
             .setAttribute("aria-hidden", false);
+
+          toggleAnimation(panelToActivate, false);
         }
         
     };

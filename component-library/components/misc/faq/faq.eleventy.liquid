@@ -14,11 +14,11 @@
                           
                         <div class="faq-panel content gsap-element-wrapper" data-gsap-animation-name="slide-up-from-bottom" data-gsap-delay="{{ forloop.index | times: 0.04 }}">
                               
-                            <h4 class="faq-trigger" aria-expanded="{% if forloop.index == 1 %}true{% else %}false{% endif %}">
+                            <h4 class="faq-trigger" aria-expanded="false">
                                 {{ item.title }}
                             </h4>
                                 
-                            <div class="faq-content" aria-hidden="{% if forloop.index == 1 %}false{% else %}true{% endif %}">
+                            <div class="faq-content" aria-hidden="true">
                                 <div>
                                     {{ item.main_column | markdownify }}
                                 </div>
