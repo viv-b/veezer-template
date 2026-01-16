@@ -18,7 +18,7 @@ function initFaq() {
           particularly for sections below the FAQ section. */
           setTimeout(() => {
             ScrollTrigger.refresh(true); // With the safe parameter true to allow for any rendering delays.
-          }, 250);
+          }, 500);
           
         });
     
