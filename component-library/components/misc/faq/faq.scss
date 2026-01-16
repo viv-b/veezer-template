@@ -46,7 +46,7 @@
     width: 20px;
     height: 3px;
     background: currentcolor;
-    transition: transform 400ms;
+    transition: transform 100ms;
   }
   
   &-trigger::after {
@@ -61,7 +61,7 @@
   &-content {
     display: grid;
     grid-template-rows: 0fr; /* Initial collapsed state */
-    transition: grid-template-rows 500ms;
+    transition: grid-template-rows 100ms;
     cursor: default;
   }
   
