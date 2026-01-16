@@ -25,7 +25,7 @@
 
                         {%- assign clip_path_class = "clip-path " | append: member.clip_path_style %}
                         {%- if member.team_image %}{% assign current_image = member.team_image %}{% else %}{% assign current_image = site.placeholder_image %}{% endif %}
-                        {% bookshop_include "resize-image-srcset" rs_lazy: lazy_load_flag rs_image: current_image rs_quality: "70" rs_title: member.title rs_multi_column_max_image_width: "50vw" rs_aspect_ratio: "1" rs_class: clip_path_class %}
+                        {% bookshop_include "resize-image-srcset" rs_lazy: lazy_load_flag rs_image: current_image rs_quality: "65" rs_title: member.title rs_multi_column_max_image_width: "50vw" rs_aspect_ratio: "1" rs_class: clip_path_class %}
                            
                     </div>
                 
