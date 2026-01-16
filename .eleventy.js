@@ -109,7 +109,7 @@ module.exports = function (eleventyConfig) {
   Any changes to your .scss files will trigger Sass compilation, and the updated .css files
   will cause Browsersync to refresh your browser, showing the latest styles. */
   eleventyConfig.setBrowserSyncConfig({
-    files: './site/css/main.css' // Adjust path to your compiled CSS.
+    files: './site/css/main.css' // Path to compiled CSS.
   });
   
   eleventyConfig.addFilter("markdownify", (markdown) => md.render(markdown));
