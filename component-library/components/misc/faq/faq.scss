@@ -46,7 +46,7 @@
     width: 20px;
     height: 3px;
     background: currentcolor;
-    transition: transform 100ms;
+    transition: transform 500ms;
   }
   
   &-trigger::after {
@@ -60,13 +60,17 @@
   
   &-content {
     display: grid;
-    grid-template-rows: 0fr; /* Initial collapsed state */
-    transition: grid-template-rows 100ms;
+    height: 10px;
+    border: solid 1px orange;
+    // grid-template-rows: 0fr; /* Initial collapsed state */
+    transition: grid-template-rows 500ms;
     cursor: default;
   }
   
   &-content[aria-hidden="false"] {
-    grid-template-rows: 1fr; /* Expanded state */
+    height: 500px;
+    border: solid 1px green;
+    // grid-template-rows: 1fr; /* Expanded state */
   }
   
   &-content > div {
