@@ -1,11 +1,9 @@
-.header-component {
+.feature-image-component {
   
-    h1 {
-        padding: 0 !important;
-        margin: 0 !important;
+    .content {
+        text-align: center;
+        background-color: rgba(0,0,0,0.05);
+        line-height: 0;
     }
-    /* Get the next direct sibling paragraph */
-    h1 + p {
-        margin-top: 2rem !important;
-    }
+    
 }
