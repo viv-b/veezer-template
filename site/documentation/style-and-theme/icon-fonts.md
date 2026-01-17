@@ -58,4 +58,4 @@ To set up, there will be either a link to an external JS file (Font Awesome) or 
 
 **Phosphor Icons**<br>No account required, just add the CSS link snippet to the `head_code` field of `_data/icon_sets.json`
 
-Placement of the icons will differ slightly so depending on which library used you might need to tweak the CSS a little. I've used Font Awesome by default so keeping with that should keep things looking OK.
+Placement of the icons will differ slightly so depending on which library used you might need to tweak the CSS a little.
