@@ -5,18 +5,38 @@
 .feature-component {
 
   .gsap-parallax-element {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    overflow: hidden;
+
+    border: solid 1px orange;
+
+    @media screen and (not (width < 1024px)) and (not (hover: none)) and (not (pointer: coarse)) {
+      /* This query only applies if:
+      1. The screen width is 1024px or greater
+      2. The primary input mechanism DOES supports hovering.
+      3. The primary input mechanism is NOT coarse.
+      In these case will be using parallax. */
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      overflow: hidden;
+      border: solid 1px green;
+    }
   }
+
   .gsap-parallax-element img {
-    position: relative;
-    scale: 1.25;
-    object-fit: cover;
-    max-width: none !important;
+    
+    @media screen and (not (width < 1024px)) and (not (hover: none)) and (not (pointer: coarse)) {
+      /* This query only applies if:
+      1. The screen width is 1024px or greater
+      2. The primary input mechanism DOES supports hovering.
+      3. The primary input mechanism is NOT coarse.
+      In these case will be using parallax. */
+      position: relative;
+      scale: 1.25;
+      object-fit: cover;
+      max-width: none !important;
+    }
   }
   
   .feature-title {

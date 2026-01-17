@@ -35,41 +35,42 @@ main .section:first-of-type.feature-alt-component .content.text-wrapper {
     }
 
    .gsap-parallax-element {
-      position: relative;
-      top: -10%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 120%;
-      overflow: hidden;
+      border: solid 1px orange;
+      height: 100%;
 
-      @media screen and (max-width: 1023px) and (hover: none) and (pointer: coarse) {
-      /* This query only applies if ALL conditions are true (mobile):
-      1. The screen width is 768px or less.
-      2. The primary input mechanism does not support hovering (suggests touch).
-      3. The primary input mechanism is coarse (confirms touch).
-      In these case will NOT be using parallax. */
-        top: 0;
-        height: 100%;
+      @media screen and (not (width < 1024px)) and (not (hover: none)) and (not (pointer: coarse)) {
+        /* This query only applies if:
+        1. The screen width is 1024px or greater
+        2. The primary input mechanism DOES supports hovering.
+        3. The primary input mechanism is NOT coarse.
+        In these case will be using parallax. */
+        position: relative;
+        top: -10%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 120%;
+        overflow: hidden;
+        border: solid 1px green;
       }
 
     }
     .gsap-parallax-element img {
-      position: relative;
-      transform: scale(1.5);
-      width: auto;
-      height: auto;
-      max-width: none !important;
 
-      @media screen and (max-width: 1023px) and (hover: none) and (pointer: coarse) {
-        /* This query only applies if ALL conditions are true (mobile):
-        1. The screen width is 768px or less.
-        2. The primary input mechanism does not support hovering (suggests touch).
-        3. The primary input mechanism is coarse (confirms touch).
-        In these case will NOT be using parallax. */
-        transform: scale(1);
+      @media screen and (not (width < 1024px)) and (not (hover: none)) and (not (pointer: coarse)) {
+        /* This query only applies if:
+        1. The screen width is 1024px or greater
+        2. The primary input mechanism DOES supports hovering.
+        3. The primary input mechanism is NOT coarse.
+        In these case will be using parallax. */
+        position: relative;
+        transform: scale(1.5);
+        width: auto;
+        height: auto;
+        max-width: none !important;
       }
+
     }
 
   }
@@ -79,4 +80,3 @@ main .section:first-of-type.feature-alt-component .content.text-wrapper {
   }
   
 }
-
