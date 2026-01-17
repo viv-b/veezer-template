@@ -14,7 +14,7 @@ blueprint:
   sub_title: Subtitle
   sub_title_color: '#ffffff'
   hero_image:
-  image_quality: 90
+  image_quality: 80
   focal_point: "center center"
   text_alignment: "center-center"
   overlay_gradient: false
