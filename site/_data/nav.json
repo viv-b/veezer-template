@@ -61,17 +61,21 @@
     },
     {
       "text": "Mix",
-      "link": "/mix/",
+      "link": "/mix/tabs-and-sponsors/",
       "enable_dropdown": true,
       "sub_navigation_group_title": "mix",
       "sub_navigation": [
         {
-          "text": "FAQs, Tabs and Sponsors",
-          "link": "/mix/faqs-tabs-sponsors/"
-        },
-        {
           "text": "Embeds and Modals",
           "link": "/mix/embeds-modals/"
+        },
+        {
+          "text": "FAQs",
+          "link": "/mix/faqs/"
+        },
+        {
+          "text": "Tabs and Sponsors",
+          "link": "/mix/t"
         },
         {
           "text": "Basic Content Blocks",
