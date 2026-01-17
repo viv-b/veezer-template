@@ -1,8 +1,8 @@
 
 {% assign this_base_url = site.base_url | remove: "https://" |  remove_last: "/" %}
 {%- comment %} 
-    Determine Focal Point values for the transformation URL of imagekit.
-    Currently NOT USED (use object-fit instead). To use as a parameter: e.g. '&a=bottom-right'.
+Determine Focal Point values for the transformation URL of imagekit.
+Currently NOT USED (use object-fit instead). To use as a parameter: e.g. '&a=bottom-right'.
 {% endcomment %}
 {%- if rs_focal_point %}
     {%- case rs_focal_point %}

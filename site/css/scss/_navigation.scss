@@ -36,7 +36,7 @@
     width: auto;
   }
 
-  /* Use custom dropdown arrow for navbar link toggler for small screens (up to tablet). */
+  // Use custom dropdown arrow for navbar link toggler for small screens (up to tablet).
   .dropdown-toggle {
     display: flex;
     justify-content: center;
@@ -73,7 +73,7 @@
   .navbar-item img {
     max-height: 40px;
   }
-  /* Animate background colour transition on MOBILE */
+  // Animate background colour transition on MOBILE
   .navbar-burger {
     right: 15px;
     -webkit-transition: background-color 0s ease-out 0.3s;
@@ -101,7 +101,7 @@
     right: 35px;
     transition: transform 0.3s;
   }
-  /* Animate position translation  on TABLET */
+  // Animate position translation on TABLET
   .navbar-burger.sticky-top {
     transform: translate(20px, -10px);
   }
@@ -170,7 +170,6 @@
   .navbar-link {
     font-size: 1rem;
     padding: 0.6rem 0;
-    /* text-transform: uppercase; */
     font-weight: 300;
     color: va.$navbar-link-color;
   }
@@ -186,7 +185,7 @@
   }
   
   .navbar-link:not(.is-arrowless)::after {
-    display: none; /* Hide the down arrow */
+    display: none; // Hide the down arrow
   }
   .navbar-link {
     margin-right: 30px;
@@ -197,14 +196,14 @@
 
   .navbar-dropdown {
     display: grid;
-    grid-template-rows: 0fr; /* Initial collapsed state */
+    grid-template-rows: 0fr; // Initial collapsed state
     transition: grid-template-rows 500ms;
     font-size: 1rem;
     padding-top: 0;
     padding-bottom: 0;
   }
   .navbar-dropdown.show-dropdown {
-    grid-template-rows: 1fr; /* Expanded state */
+    grid-template-rows: 1fr;  // Expanded state
     border-left: solid 1px #888;
   }
   .navbar-dropdown > div {
@@ -252,7 +251,7 @@
     transition-property: opacity;
     opacity: 1;
   }
-  /* END avoid FOUC */
+  // END avoid FOUC
   
   .navbar {
     position: fixed;
@@ -291,7 +290,6 @@
     padding: 0.5rem 0.5rem;
     font-size: 1rem;
     font-weight: 300;
-    /* text-transform: uppercase; */
     -moz-transition-duration: 0.15s;
     -o-transition-duration: 0.15s;
     -webkit-transition-duration: 0.15s;
@@ -309,9 +307,7 @@
   a.navbar-item.is-active,
   a.navbar-item.is-active:not(:focus):not(:hover),
   a.navbar-link.is-active:not(:focus):not(:hover) {
-    /* color: va.$navbar-active-link-color; */
     color: va.$navbar-link-color;
-    /* background-color: va.$navbar-active-link-background-color; */
     background-color: transparent;
     border: solid 1px #888;
   }
@@ -326,19 +322,16 @@
     -webkit-transition-duration: 0.3s;
     transition-duration: 0.3s;
     color: va.$navbar-link-color;
-    /* background-color: va.$navbar-background-color; */
     background-color: transparent;
   }
   
   a.navbar-item.is-active:hover,
   a.navbar-link.is-active:hover {
-    /* color: va.$navbar-active-link-color; */
     color: va.$navbar-link-color;
-    /* background-color: va.$navbar-active-link-background-color; */
     background-color: transparent;
   }
   
-  /* Dropdown */
+  // Dropdown
   .navbar-dropdown a.navbar-item:not(.is-active, .is-selected) {
     background-color: va.$navbar-dropdown-background-color;
     color: va.$navbar-link-color;
@@ -349,32 +342,29 @@
     background-color: transparent;
   }
   .navbar-item.has-dropdown:hover .navbar-link.is-active {
-    /* background-color: va.$navbar-active-link-background-color; */
     background-color: transparent;
   }
   
-  /* Dropdown Arrow */
+  // Dropdown Arrow
   .navbar-link:not(.is-arrowless)::after {
     border-color: va.$navbar-link-color;
     margin-top: -0.4375em;
     border-width: 1px;
   }
   .has-dropdown:hover a.navbar-link.navbar-link:not(.is-arrowless)::after {
-    /* border-color: va.$navbar-active-link-color; */
     border-color: va.$navbar-link-color;
   }
   .has-dropdown:hover a.navbar-link.navbar-link:not(.is-arrowless):not(.is-active)::after {
     border-color: va.$navbar-link-color;
   }
   a.navbar-link.navbar-link:not(.is-arrowless).is-active::after {
-    /* border-color: va.$navbar-active-link-color; */
     border-color: va.$navbar-link-color;
   }
   .has-dropdown .navbar-link:not(.is-arrowless):hover {
     background: transparent;
   }
   
-  /* Sub links */
+  // Sub links
   .navbar-dropdown {
     
     border-top: 0;
@@ -417,12 +407,12 @@
 
   .navigation-header {
 
-    /* Hide custom dropdown arrow for larger screens. */
+    // Hide custom dropdown arrow for larger screens
     .dropdown-toggle {
       display: none;
     }
     .navbar-dropdown {
-      /* Replaces 'display: none' from Bulma */
+      // Replaces 'display: none' from Bulma
       display: block;
       opacity: 0;
       top: 110%;

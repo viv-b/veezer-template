@@ -22,11 +22,11 @@
     
     </div>
     {% comment %}
-    Due to using GSAP Smooth Scrolling, modals need to be placed outside of the smooth scrolling container to avoid issues with fixed positioning.
+    Due to using GSAP ScrollSmoother, modals need to be placed outside of the scroll smoother container to avoid issues with fixed positioning.
     To accommodate this, the modal structure is included here as a template to be cloned and moved to the #modal-holder div (see layouts/base.liquid) when
     a page with modals is loaded. The JavaScript in js/init-modals.js handles this process.
 
-    THis 'original' modal structure is hidden with the "to-be-cloned" class and is not displayed to users. It also has no id attribute (which is
+    This 'original' modal structure is hidden with the "to-be-cloned" class and is not displayed to users. It also has no id attribute (which is
     added to the cloned modal) to so cannot be triggered to display.
     {% endcomment %}
     <div data-modal-id="{{ modal_id }}" class="modal to-be-cloned">

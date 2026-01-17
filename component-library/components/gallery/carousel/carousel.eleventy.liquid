@@ -26,9 +26,11 @@
                           
                           <div class="column">
                               <div class="content {{ item.text_alignment }}">
-                                  {%- comment %} Apart from the first slide, add the gsap animation text effect to the newly appearing slide with JS when the slide changes.
-                                  Otherwise, the text animation will play (with scrolltrigger as the trigger) on all slides at once. This way means that the animation
-                                  only starts when slide becomes visible. This is done by adding the gsap animation class to the newly appearing slide with JS when the slide changes.{% endcomment %}
+                                  {%- comment %}
+                                  Apart from the first slide, add the gsap animation text effect to the newly appearing slide with JS when the slide changes.
+                                  Otherwise, the text animation will play (with scrollTrigger as the trigger) on all slides at once. This way ensures that the animation
+                                  only starts when slide becomes visible. This is done by adding the GSAP animation class to the newly appearing slide with JS when the slide changes.
+                                  {% endcomment %}
                                   <div class="carousel-title{% if forloop.first %} gsap-element-wrapper{% else %} gsap-element-wrapper-no-scrolltrigger{% endif %}" data-gsap-animation-name="slide-up-from-bottom" data-gsap-delay="1" style="color: {{ item.title_color }}">{{ item.title }}</div>
                                   <div class="carousel-sub-title{% if forloop.first %} gsap-element-wrapper{% else %} gsap-element-wrapper-no-scrolltrigger{% endif %}" data-gsap-animation-name="slide-up-from-bottom" data-gsap-delay="1.5" style="color: {{ item.sub_title_color }}">{{ item.sub_title }}</div>
                               </div>

@@ -1,16 +1,12 @@
-/* Used to have it so woul dhave a fade-in of the whole section before the fade in of the gsap-element-wrapper elements. */
-/* Simplified now though and don't fade in the sections (.use-gsap class). */
-
-/* These are the elements where the individual animations are applied (including a fade-in) */
+/* These are the elements where the individual animations are applied (including a fade-in). */
 .gsap-element-wrapper,
 .gsap-element-wrapper-no-scrolltrigger {
-  /* Instead of using opacity, for better performance use Auto Alpha in GSAP. Need to set initial visibility
-  as hidden. Auto Alpha will assume opacity:0 to start with then as it animates up the opacity value, it will
-  also add visbility: visible as soon asw opacity is > 0. */
-  /* opacity: 0.01; */
+  /* Instead of using opacity, for better performance use autoAlpha in GSAP. Need to set initial visibility
+  as hidden. autoAlpha will assume opacity: 0 to start with then as it animates up the opacity value, it will
+  also add visibility: visible as soon as opacity is > 0. */
   visibility: hidden;
 }
-/* Set the animation positions to the default when viewed in the editor */
+/* Set the animation positions to the default when viewed in the editor. */
 .cms-editor-active .gsap-element-wrapper,
 .cms-editor-active .gsap-element-wrapper-no-scrolltrigger {
   visibility: visible !important;
@@ -22,8 +18,9 @@
 
 /* --- ANIMATION START POSITION DEFAULTS --- */
 
-/* Instead of setting the initial trnasforms in CSS, set it within GSAP for better control
-of the animation process. Better if GSAP has control of all aspects of the positioning. */
+/* Instead of setting the initial transforms in CSS, set it within GSAP for better control of the
+animation process. Things just work smoother if GSAP has control of all aspects of the positioning. */
+
 /*[data-gsap-animation-name="slide-in-from-left"] {
   transform: translateX(-20px);
 }
@@ -47,6 +44,6 @@ section.use-gsap,
 .event-header-links-wrapper {
   margin-top: -1px; 
   /* Fixes a small gap that sometimes appears (on and off with scrolling) at the top
-  of the section when using GSAP animations and Scroll Smoother. Most visible whith
+  of the section when using GSAP animations and Scroll Smoother. Most visible with
   dark backgrounds over a light body colour. */
 }

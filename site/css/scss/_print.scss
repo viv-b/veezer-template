@@ -4,7 +4,7 @@
 
 @media print {
 
-    /* Override styles for the GSAP SmoothScroller JS library, otherwise printing will not work correctly. */
+    // Override styles for the GSAP ScrollSmoother JS library, otherwise printing will not work correctly.
     body,
     .smooth-wrapper,
     .smooth-content {
@@ -31,7 +31,7 @@
         background: #fff !important;
     }
     
-    /* Hide elements above main content not needed in print. */
+    // Hide elements above main content not needed in print.
     #modal-search,
     #documentation-link,
     #page-loader,
@@ -46,7 +46,7 @@
         padding-top: 0 !important;
     }
 
-    /* Ensure GSAP animated elements are fully visible in print. */
+    // Ensure GSAP animated elements are fully visible in print.
     .gsap-element-wrapper,
     .gsap-element-wrapper-no-scrolltrigger,
     .gsap-batch-stagger * {
@@ -84,7 +84,7 @@
         color: #000 !important;
     }
 
-    /* Component Specific Fixes */
+    // Component Specific Fixes
 
     .gallery-fs-lightbox-component,
     .carousel-mini-component {
@@ -108,7 +108,7 @@
     }
 
 
-    /* Section padding helpers */
+    // Section padding helpers
     $padding-position: "top","bottom";
 
     /* Note below: Adding the column gap (0.75rem default) avoids overlapping of the sections.

@@ -177,9 +177,9 @@ $padding-position: "top","bottom";
   
   /* When using a fixed navigation bar, can set some padding at the top of <main> that is less than or equal to 
   the height of the navbar when in it's shrunken state (after scrolling down the page a bit). If set this padding
-  greater than that, then a flash of body background can show when quickly scrolling back to the top of the page. */
+  greater than that, then a flash of body background can show when quickly scrolling back to the top of the page.
   
-  /* NOTE: If going to use a semi-transparent navbar then need to remove this padding when using hero images or a
+  NOTE: If going to use a semi-transparent navbar then need to remove this padding when using hero images or a
   carousel at the top of the page. */
   main {
     padding-top: var(--main-container-top-padding);
@@ -201,22 +201,19 @@ $padding-position: "top","bottom";
     padding: 4rem 3rem;
   }
   
-  /* Rather than put padding or margin on Main to allow for the height of the fixed navbar,
+  /* Rather than put padding or margin on <main> to allow for the height of the fixed navbar,
   put it on the first section container element. That way, the background underneath the navbar will
   match the background of this container element all the way to the top of the page so doesn't look odd
-  when the navbar shrinks on scroll */
-  
-  /* Only will apply to components where a div of this class has been added. E.g. the Header Component
-  Increase this value if not using padding on <main> (above). */
+  when the navbar shrinks on scroll. */
   main .section:first-of-type .first-of-type-section-spacer {
     padding-top: 80px;
   }
   
-  /* When first create a page in the admin, will just have the fixed navbar and then the footer
+  /* When first creating a page in the admin, will just have the fixed navbar and then the footer
   below it, but with the top edge of the footer tucked underneath the navbar (looks poor). Cannot use
-  the CSS above to add some padding as Footer is the next sibling of main, not a child of it.
-  So instead use an empty 'spacer' div within 'main' and then check if it is the direct sibling
-  of a '.section' (component wrapper) if so, hide it. Otherwise if it's visble it pushes down the
+  the CSS above to add some padding as <footer> is the next sibling of <main>, not a child of it.
+  So instead use an empty 'spacer' div within <main> and then check if it is the direct sibling
+  of a '.section' (component wrapper). If so, hide it. Otherwise if it's visible it pushes down the
   footer below the bottom edge of the navbar. */
   main .footer-spacer {
     height: 110px;
@@ -233,7 +230,7 @@ $padding-position: "top","bottom";
   z-index: 10000;
   top: 20px;
   left: 50%;
-  transform: translateX(-50%); /* Centre horizontally */
+  transform: translateX(-50%); // Centre horizontally
   background: cornsilk;
   padding: 35px;
   border: solid 4px #ddd;

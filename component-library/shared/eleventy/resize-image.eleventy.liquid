@@ -8,7 +8,7 @@ Height (as 'rs_height') - optional.
 Quality (as 'rs_quality') - optional.
 {% endcomment %}
 
-{%- comment %} ------ No height(optional) sent as a parameter so work out width, height and aspect ratios. {% endcomment %}
+{%- comment %} ++++++  No height(optional) sent as a parameter so work out width, height and aspect ratios. {% endcomment %}
 {%- unless rs_height %}
     {%- assign image_x = rs_image | prepend: "site" | image-width %}
     {%- assign image_y = rs_image | prepend: "site" | image-height %}

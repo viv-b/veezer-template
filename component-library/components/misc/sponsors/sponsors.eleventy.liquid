@@ -8,8 +8,10 @@
 
             {%- if item.sponsor_image %}{% assign current_image = item.sponsor_image %}{% else %}{% assign current_image = site.placeholder_image %}{% endif %}
            
-            {%- comment %} ++++++ With a filter, determine dimensions of image so know if 'landscape', 'square' or 'portrait'. {% endcomment %}
-            {%- comment %} ++++++ Need to work with floats not integers to get a floating result when using 'divided_by'. Hence the 'times: 1.0'. {% endcomment %}
+            {%- comment %}
+            With a filter, determine dimensions of image so know if 'landscape', 'square' or 'portrait'.
+            Need to work with floats not integers to get a floating result when using 'divided_by'. Hence the 'times: 1.0'.
+            {% endcomment %}
             
             {%- assign image_x = current_image | prepend: "site" | image-width | times: 1.0 %}
             {%- assign image_y = current_image | prepend: "site" | image-height | times: 1.0 %}

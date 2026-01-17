@@ -23,12 +23,13 @@
                             {%- comment %}
                             Below can use '[this_collection_category_filename].category' in the for clause directly. Works fine in the built final site.
                             However, this wont be accepted in live editing so whole component wont appear in the live editor.
-                            By breaking it up into the assign statement and then grabbing the category, seems to not break the live editing display. Just wont show the buttons corectly in the live editing.
+                            By breaking it up into the assign statement and then grabbing the category, seems to not break the live editing display.
+                            Just wont show the buttons corectly in the live editing.
                             {% endcomment %}
                             
                             {%- assign this_collection_category_filename = this_collection | append: "-categories" %}
                             
-                            {%- assign category_array = [this_collection_category_filename] %} {% comment %} e.g. fleet-categories {% endcomment %}
+                            {%- assign category_array = [this_collection_category_filename] %} {%- comment %} e.g. fleet-categories {% endcomment %}
                             
                             {%- for item in category_array.category %}
                                 {% if forloop.index == 1 %}

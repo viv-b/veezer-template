@@ -6,8 +6,7 @@
           
             {%- if blog.data.blog_feature_image %}{% assign current_image = blog.data.blog_feature_image %}{% else %}{% assign current_image = site.placeholder_image %}{% endif %}
 
-            <!-- (% bookshop_include "resize-image-srcset" live_render: false rs_lazy: true rs_image: current_image rs_quality: "70" rs_title: blog.data.title rs_multi_column_max_image_width: "400px" rs_aspect_ratio: "auto" %) -->
-            {%- bookshop_include "resize-image" live_render: false rs_lazy: true rs_image: current_image rs_title: pg.data.title rs_quality: "70" rs_width: "400" rs_height: "400" %}
+            {%- bookshop_include "resize-image" live_render: false rs_lazy: true rs_image: current_image rs_title: blog.data.title rs_quality: "70" rs_width: "400" rs_height: "400" %}
             
         </div>
                     

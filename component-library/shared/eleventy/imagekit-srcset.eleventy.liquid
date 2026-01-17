@@ -1,6 +1,6 @@
 {%- comment %} 
-    Determine Focal Point values for the transformation URL of imagekit.
-    Currently NOT USED (use object-fit instead). To use as a parameter: e.g. 'fo-bottom_right'.
+Determine Focal Point values for the transformation URL of imagekit.
+Currently NOT USED (use object-fit instead). To use as a parameter: e.g. 'fo-bottom_right'.
 {% endcomment %}
 {%- if rs_focal_point %}
     {%- case rs_focal_point %}
@@ -34,6 +34,7 @@
             {{ site.imagekit_url }}{{ rs_image }}?tr=h-{{ rs_height }},w-{{ rs_width }}{% if rs_quality %},q-{{ rs_quality }}{% endif %}{% if fo_value %},fo-{{ fo_value }}{% endif %} {{ rs_width }}w{% endif %}"
     sizes="(max-width: 768px) 150vw, {% if rs_multi_column_max_image_width %}{{ rs_multi_column_max_image_width }}{% else %}100vw{% endif %}" />
 {%- comment %} 
-    Note the 150vw for very small screen sizes. Below 768px width with Bulma.css, columns are full-screen width 
-    if used 100vw as the trigger they would end up showing as a enlarged small image (e.g. if screen width was say 760px) and look poor.
+Note the 150vw for very small screen sizes. Below 768px width with Bulma CSS, columns are full-screen width. 
+If used 100vw as the trigger they would end up showing as a enlarged small image (e.g. if screen width was say 760px)
+and look poor.
 {% endcomment %}

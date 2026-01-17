@@ -1,21 +1,21 @@
 {%- comment %}
-    This component is used to resize images and create srcsets for responsive images.
-    It currently supports IMAGEKIT, but can easily be converted to use IMGIX, etc.
+This component is used to resize images and create srcsets for responsive images.
+It currently supports IMAGEKIT, but can be converted to use IMGIX, etc.
 
-    The 'aspect_rotio' variable is a integer or decimal (single) value of width relative to height (required - set to 'auto' if not specified).
-    The 'image' variable is the path to the image starting with a leading slash. e.g. /uploads/2024/01/image.jpg
-    The 'title' variable is used to set the alt and title attributes of the image. If not provided it defaults to the page title.
-    The 'focal_point' variable is optional and is used to set the object-position CSS property of the image. It should be in the format "x% y%". e.g. "50% 50%" for center, "0% 0%" for top left, "100% 100%" for bottom right etc.
-    The 'class' variable is optional and is used to add additional classes to the image tag.
-    The 'custom_attribute_text' variable is optional and is used to add any custom attributes to the image tag. e.g. 'data-src="example"'.
-    The 'quality' variable is optional and is used to set the quality of the image (if supported by the image service). e.g. "70" for 70% quality.
-    The 'lazy' variable is optional and defaults to true. If set to false, it will not add loading="lazy" attribute to the image tag.
-    The 'multi_column_max_image_width' variable is optional and is used to set the max width of the image in multi-column layouts (e.g. "50vw" for half viewport width). Defaults to "100vw".
+The 'aspect_rotio' variable is a integer or decimal (single) value of width relative to height (required - set to 'auto' if not specified).
+The 'image' variable is the path to the image starting with a leading slash. e.g. /uploads/2024/01/image.jpg
+The 'title' variable is used to set the alt and title attributes of the image. If not provided it defaults to the page title.
+The 'focal_point' variable is optional and is used to set the object-position CSS property of the image. It should be in the format "x% y%". e.g. "50% 50%" for center, "0% 0%" for top left, "100% 100%" for bottom right etc.
+The 'class' variable is optional and is used to add additional classes to the image tag.
+The 'custom_attribute_text' variable is optional and is used to add any custom attributes to the image tag. e.g. 'data-src="example"'.
+The 'quality' variable is optional and is used to set the quality of the image (if supported by the image service). e.g. "70" for 70% quality.
+The 'lazy' variable is optional and defaults to true. If set to false, it will not add loading="lazy" attribute to the image tag.
+The 'multi_column_max_image_width' variable is optional and is used to set the max width of the image in multi-column layouts (e.g. "50vw" for half viewport width). Defaults to "100vw".
 {% endcomment %}
 
 {%- comment %}
-    To prevent issues with variables from the parent include being availble in this template (since this is an 'include' rather than a 'render'), make sure to use unique variables.
-    Prefix all variables in this include with 'rs' (for 'resize').
+To prevent issues with variables from the parent include being availble in this template (since this is an 'include' rather than a 'render'), make sure to use unique variables.
+Prefix all variables in this include with 'rs' (for 'resize').
 {% endcomment %}
 
 {%- comment %} ++++++ The 'image-width' and 'image-height' variables are filters created in eleventy.js {% endcomment %}
@@ -63,11 +63,11 @@
 {%- else %}
   
     {%- comment %}
-        Note that can't seem to reassign a parameter value sent through from the parent template.
-        There is a strange quirk in the editor. When you set a feature or a team image to 'original', unless it is the first component of that grouping on the page, the 
-        aspect ratio will default to the setting of the one before it. No problem on the live draft site though. Seems to be related to how variables are set between this template
-        and the component parent template. Overcame this by directly calling on 'img.crop' value from the parent component template (applies to the 'feature' component).
-        See notes below about variable scope.
+    Note that can't seem to reassign a parameter value sent through from the parent template.
+    There is a strange quirk in the editor. When you set a feature or a team image to 'original', unless it is the first component of that grouping on the page, the 
+    aspect ratio will default to the setting of the one before it. No problem on the live draft site though. Seems to be related to how variables are set between this template
+    and the component parent template. Overcame this by directly calling on 'img.crop' value from the parent component template (applies to the 'feature' component).
+    See notes below about variable scope.
     {% endcomment %}
     
     <img {% if rs_lazy != false %}loading="lazy"{% endif %} style="aspect-ratio: {% unless img.crop == "auto" %}{{ final_aspect_ratio }}{% else %}auto{% endunless %}; object-fit: cover; {% if rs_focal_point %}object-position: {{ rs_focal_point }};{% endif %}" src="{{ rs_image }}" alt="{{ rs_title }}" title="{{ rs_title }}" class="{% if rs_class %}{{ rs_class }}{% endif %}" {% if rs_custom_attribute_text %}{{ rs_custom_attribute_text }}{% endif %} width="{{ rs_width }}" height="{{ rs_height }}" onerror="this.onerror=null;this.src='{{ site.placeholder_image }}'" />
@@ -75,12 +75,12 @@
 {%- endif %}
 
 {%- comment %}
-    Key Concepts in Liquid Variable Scoping (AI generated):
-    - Shared Scope with include: When you use the {% include %} tag, the included file runs within the same scope as the parent file. Any variables set in the parent are available in the child, and vice versa.
-    - Variable Shadowing: When a variable in an inner scope has the same name as a variable in an outer scope, the inner variable "shadows" the outer one. References to that name within the inner scope will access the local variable's value.
-    - No Overwriting of Parent Scope: An assignment within a nested include does not change the variable's value in the original parent template after the include finishes executing. 
-    Note on the render tag:
-    - The more modern {% render %} tag behaves differently, forcing a separate, local scope unless variables are explicitly passed in as parameters. This helps prevent naming conflicts and promotes cleaner code.
+Key Concepts in Liquid Variable Scoping (AI generated):
+- Shared Scope with include: When you use the {% include %} tag, the included file runs within the same scope as the parent file. Any variables set in the parent are available in the child, and vice versa.
+- Variable Shadowing: When a variable in an inner scope has the same name as a variable in an outer scope, the inner variable "shadows" the outer one. References to that name within the inner scope will access the local variable's value.
+- No Overwriting of Parent Scope: An assignment within a nested include does not change the variable's value in the original parent template after the include finishes executing. 
+Note on the render tag:
+- The more modern {% render %} tag behaves differently, forcing a separate, local scope unless variables are explicitly passed in as parameters. This helps prevent naming conflicts and promotes cleaner code.
 {% endcomment %}
 
 
