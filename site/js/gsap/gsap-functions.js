@@ -77,8 +77,8 @@ function gsapFunctions(section, batch) {
         autoAlpha: 1,
         x: 0,
         scrollTrigger: {
-          trigger: section,
-          markers: true
+          trigger: section
+          // markers: true
         }
       });
         
@@ -96,8 +96,8 @@ function gsapFunctions(section, batch) {
         autoAlpha: 1,
         x: 0,
         scrollTrigger: {
-          trigger: section,
-          markers: true
+          trigger: section
+          // markers: true
         }
       });
         
@@ -115,8 +115,8 @@ function gsapFunctions(section, batch) {
         autoAlpha: 1,
         y: 0,
         scrollTrigger: {
-          trigger: section,
-          markers: true
+          trigger: section
+          // markers: true
         }
       });
         
@@ -134,8 +134,8 @@ function gsapFunctions(section, batch) {
         autoAlpha: 1,
         y: 0,
         scrollTrigger: {
-          trigger: section,
-          markers: true
+          trigger: section
+          // markers: true
         }
       });
         
@@ -153,8 +153,8 @@ function gsapFunctions(section, batch) {
         autoAlpha: 1,
         scale: 1,
         scrollTrigger: {
-          trigger: section,
-          markers: true
+          trigger: section
+          // markers: true
         }
       });       
         
@@ -167,8 +167,8 @@ function gsapFunctions(section, batch) {
         delay: getDelay(section),
         autoAlpha: 1,
         scrollTrigger: {
-          trigger: section,
-          markers: true
+          trigger: section
+          // markers: true
         }
       });
         
