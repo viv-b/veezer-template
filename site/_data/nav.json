@@ -61,7 +61,7 @@
     },
     {
       "text": "Mix",
-      "link": "/mix/tabs-and-sponsors/",
+      "link": "/mix/",
       "enable_dropdown": true,
       "sub_navigation_group_title": "mix",
       "sub_navigation": [
@@ -75,7 +75,7 @@
         },
         {
           "text": "Tabs and Sponsors",
-          "link": "/mix/t"
+          "link": "/mix/tabs-and-sponsors/"
         },
         {
           "text": "Basic Content Blocks",
