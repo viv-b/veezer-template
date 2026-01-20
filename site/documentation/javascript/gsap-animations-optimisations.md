@@ -38,7 +38,7 @@ _inputs:
 
 ---
 
-*I wanted to know whether having an initial opacity: 0 before fade-in animations was a potential problem for SEO or for page loading speed metrics. The ideal solution appears to be to alter the technique used depending on whether content is above the fold (top portion of a webpage visible without scrolling) or below it.*
+*I wanted to know whether having an initial `opacity: 0` before fade-in animations was a potential problem for SEO or for page loading speed metrics. The ideal solution appears to be to alter the technique used depending on whether content is above the fold (top portion of a webpage visible without scrolling) or below it.*
 
 *For simplicity, the template currently uses the autoAlpha approach to fade-in all content.*
 
