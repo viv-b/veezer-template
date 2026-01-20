@@ -22,12 +22,6 @@ blurb: >-
   environment.
 
 
-  I didn't initially start out it with the intention of sharing Veezer. However,
-  preparing this for public view has forced me to spend a lot of time to iterate
-  and refine things. I'm hoping I can at least provide some ideas for others and
-  maybe get some feedback on how to improve it.
-
-
   ## Basic needs and wants I started out with:
 
 
@@ -35,8 +29,7 @@ blurb: >-
 
 
   Simplify and automate as much of the editing process so that editors can work
-  purely with content. Avoid those editors needing to consider specific layout
-  options (apart from those built into the CloudCannon Bookshop components).
+  purely with content and not be too concerned with layout.
 
 
   #### Provide a way to keep a consistent theme.
@@ -50,40 +43,31 @@ blurb: >-
   #### Use a partial page refresh.
 
 
-  Using the Fetch API, load just the content for the new page into the `<main>`
-  tag of the primary template (the main navigation bar and footer remain
-  unaffected). This replaces the previous page content.
+  Using the Fetch API, load the content for the new page into the `<main>`
+  element of the primary template. The main navigation bar and footer remain
+  unaffected.
 
 
-  #### Use GSAP animation.
+  #### Make use of animation.
 
 
   Make use of animations like fade-ins and position transitions for a smoother
   experience. Ensure animations are triggered only when images have been fully
-  loaded by the browser.
+  loaded by the browser. The <a href="https://gsap.com/" target="_blank"
+  rel="noopener">GSAP Animation Library</a> works really well.
 
 
-  #### Keep to 'vanilla' javascript.<br>Cut out the frameworks.
+  #### Keep to 'vanilla' JavaScript.
 
 
-  There are no javascript frameworks used. Also, for things like image
-  sliders/carousels, I've used my own plain javascript.
+  Where practical, for things like image sliders / carousels, I've used my own
+  plain vanilla JavaScript rather than third-party tools. It keeps things
+  simpler to maintain and adjust to suit any template changes since the code is
+  very similar across ths site.
 
 
-  Using my own javascript (and CSS with the help of <a href="https://bulma.io/"
-  target="_blank" rel="noopener">Bulma CSS</a>) I can easily reconfigure my
-  sliders, carousels and the like since they follow the same pattern. I'm not
-  needing to wade through a full 'bells and whistles' library that does more
-  than I need but is really hard to just add that 4rem padding :)
-
-
-  #### ...but don't reinvent the wheel.
-
-
-  Having said about reducing third-party javascript, the template uses a great
-  little image lightbox - <a href="https://fslightbox.com/" target="_blank"
-  rel="noopener">Fullscreen Lightbox</a>. Also the <a href="https://gsap.com/"
-  target="_blank" rel="noopener">GSAP Animation Library</a> works really well.
+  I've used <a href="https://fslightbox.com/" target="_blank"
+  rel="noopener">Fullscreen Lightbox</a> in the galleries.
 
 
   #### Keep the page loading speed respectable.
