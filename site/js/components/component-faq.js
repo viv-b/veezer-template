@@ -1,8 +1,10 @@
 function initFaq() {
 
-    /* Uses CSS Grid to be able to simulate transition from height: 0 to height: auto (which isn't possible)
+    /* ORIGINAL SETUP: Used CSS Grid to be able to simulate transition from height: 0 to height: auto (which isn't possible)
     Example: https://codepen.io/kevinpowell/pen/NWOgVga
     Discussion: https://keithjgrant.com/posts/2023/04/transitioning-to-height-auto/ */
+
+    /* CURRENT SETUP: Using GSAP to animate height directly for better performance and smoother transitions. */
     
     
     // Iterate over each individual accordion component that has been added.

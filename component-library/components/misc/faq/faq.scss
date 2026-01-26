@@ -1,7 +1,14 @@
 /* Keep all FAQ items open in editor. */
 .cms-editor-active .faq-content {
-  grid-template-rows: 1fr !important;
+  height: auto !important;
 }
+
+/* ORIGINAL SETUP: Transitioning a row's height using 'grid-template-rows' from '0fr' to '1fr' is a modern
+CSS technique to animate content's height from hidden ('height: 0') to its natural, 'height: auto'. This method is
+commonly used for effects like accordions or expandable sections, as animating height: auto directly
+is not possible with CSS transitions. */
+
+/* CURRENT SETUP: Using GSAP to animate height directly for better performance and smoother transitions. */
 
 .faq {
   
