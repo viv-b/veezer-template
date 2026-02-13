@@ -30,7 +30,7 @@ collections_config:
   documentation:
     path: documentation
     icon: library_books
-    url: /documentation/{permalink}/
+    url: /{permalink}/
     output: true
     description: ''
     _enabled_editors:
