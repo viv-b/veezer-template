@@ -3,7 +3,6 @@ _schema: default
 title: Image Credits
 tags: documentation
 permalink: /documentation/image-credits/
-url: /documentation/image-credits/
 layout: layouts/documentation.liquid
 date: 2026-01-15T11:06:32+13:00
 seo:

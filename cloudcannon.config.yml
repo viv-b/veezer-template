@@ -11,7 +11,7 @@ collections_config:
   pages:
     path: pages
     icon: description
-    url: /[slug]/
+    url: /{permalink}/
     output: true
     description: ''
     _enabled_editors:
@@ -30,7 +30,7 @@ collections_config:
   documentation:
     path: documentation
     icon: library_books
-    url: /documentation/[slug]/
+    url: /documentation/{permalink}/
     output: true
     description: ''
     _enabled_editors:

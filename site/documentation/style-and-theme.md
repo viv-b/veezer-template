@@ -3,7 +3,6 @@ _schema: default
 title: Style and Theme
 tags: documentation
 permalink: /documentation/style-and-theme/
-url: /documentation/style-and-theme/
 layout: layouts/documentation.liquid
 date: 2026-01-14T12:14:34+13:00
 seo:

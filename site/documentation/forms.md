@@ -3,7 +3,6 @@ _schema: default
 title: Forms
 tags: documentation
 permalink: /documentation/forms/
-url: /documentation/forms/
 layout: layouts/documentation.liquid
 date: 2026-01-15T10:41:34+13:00
 seo:

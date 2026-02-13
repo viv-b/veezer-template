@@ -3,7 +3,6 @@ _schema: default
 title: Javascript
 tags: documentation
 permalink: /documentation/javascript/
-url: /documentation/javascript/
 layout: layouts/documentation.liquid
 date: 2026-01-13T00:00:00+13:00
 seo:

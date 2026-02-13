@@ -3,7 +3,6 @@ _schema: default
 title: Image Handling
 tags: documentation
 permalink: /documentation/image-handling/
-url: /documentation/image-handling/
 layout: layouts/documentation.liquid
 date: 2026-01-13T00:00:00+13:00
 seo:

@@ -3,7 +3,6 @@ _schema: default
 title: Navigation
 tags: documentation
 permalink: /documentation/navigation/
-url: /documentation/navigation/
 layout: layouts/documentation.liquid
 date: 2026-01-13T00:00:00+13:00
 seo:

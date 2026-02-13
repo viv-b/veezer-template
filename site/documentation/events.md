@@ -3,7 +3,6 @@ _schema: default
 title: Events
 tags: documentation
 permalink: /documentation/events/
-url: /documentation/events/
 layout: layouts/documentation.liquid
 date: 2026-01-15T10:52:14+13:00
 seo:
