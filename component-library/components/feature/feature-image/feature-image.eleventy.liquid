@@ -10,7 +10,7 @@
                 
                 <div class="content gsap-element-wrapper" data-gsap-animation-name="slide-down-from-top">
                     {%- if feature_image %}{% assign current_image = feature_image %}{% else %}{% assign current_image = site.placeholder_image %}{% endif %}
-                    {% bookshop_include "resize-image-srcset" rs_lazy: true rs_image: current_image rs_quality: "70" rs_title: feature_image_title rs_multi_column_max_image_width: "100vw" %}
+                    {% bookshop_include "resize-image-srcset" rs_lazy: true rs_image: current_image rs_quality: "70" rs_title: title rs_multi_column_max_image_width: "100vw" rs_aspect_ratio: "auto" %}
                 </div>
               
             </div>
