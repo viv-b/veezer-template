@@ -13,7 +13,7 @@ blueprint:
   card_aspect_ratio: auto
   cards:
     - front:
-        flip_card_image: /uploads/flip-cards/placeholder.jpg
+        flip_card_image:
         button_text: More...
       back:
         title: Title...
