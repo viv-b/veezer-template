@@ -10,6 +10,8 @@ paths:
 collections_config:
   pages:
     path: pages
+    glob:
+      - '!blog.html'
     icon: description
     url: /{permalink}/
     output: true
