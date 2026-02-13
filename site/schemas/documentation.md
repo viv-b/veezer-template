@@ -2,7 +2,6 @@
 title:
 tags: documentation
 permalink:
-url:
 layout: layouts/documentation.liquid
 date:
 seo:
