@@ -3,8 +3,8 @@
   "mode": "hosted",
   "build": {
     "install_command": "npm i",
-		"build_command": "npm run build",
-		"output_path": "_site",
+    "build_command": "npm run build",
+    "output_path": "_site",
     "preserved_paths": "",
     "environment_variables": [],
     "config": "",
