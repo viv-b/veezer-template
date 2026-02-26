@@ -8,7 +8,7 @@ excerpt: >-
   The veil first revealed itself at dusk, when the world’s colours thinned and
   the air grew heavy with unspoken memories. To most, it was nothing more than a
   trick of fading light, but to those who listened—truly listened—it whispered
-  of another realm pressed tightly against their own. 
+  of another realm pressed tightly against their own..
 seo:
   meta_title:
   meta_description:
